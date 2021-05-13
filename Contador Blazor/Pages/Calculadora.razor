@@ -1,0 +1,40 @@
+﻿@page "/Calculadora"
+
+<div class="row">
+    <div class="form-group mr-4">
+        <p>Numero 1:</p>
+        <input type="number" @bind-value="@Numero1" />
+    </div>
+
+    <div class="form-group">
+        <p>Numero 2:</p>
+        <input type="number" @bind-value="@Numero2" />
+    </div>
+
+    <div class="col">
+        <br />
+        <button @onclick="@OperacacionesMat">Calcular operaciones</button>
+    </div>
+</div>
+
+<br />
+Resultado suma: @rSuma
+<br />
+Resultado resta: @rResta
+<br />
+Resultado multiplicacion: @rMult
+
+@code {
+    public float Numero1 { get; set; }
+    public float Numero2 { get; set; }
+    public float rSuma { get; set; }
+    public float rResta { get; set; }
+    public float rMult { get; set; }
+
+    private void OperacacionesMat()
+    {
+        rSuma = Numero1 + Numero2;
+        rResta = Numero1 - Numero2;
+        rMult = Numero1 * Numero2;
+    }
+}
